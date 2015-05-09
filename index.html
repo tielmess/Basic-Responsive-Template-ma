@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <title>Basic Responsive Template: with Metadata &amp; ARIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="URL" type="text/css" />
+
+    <link rel="canonical" href="URL" />
+
+    <!-- Facebook Metadata -->
+    <meta property="og:title" content="TITLE"/>
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="IMAGE" />
+    <meta property="og:description" content="DESC"/>
+    <meta property="og:url" content="URL">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="...">
+    <!-- Google+ Metadata -->
+    <meta itemprop="name" content="TITLE">
+    <meta itemprop="image" content="IMAGE">
+    <meta itemprop="description" content="DESC">
+
+    <style>
+
+    /*------------------------------*\
+        Reset
+    \*------------------------------*/
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+
+    html { line-height: 1; }
+
+    ol, ul { list-style: none; }
+
+    table { border-collapse: collapse; border-spacing: 0; }
+
+    caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+    q, blockquote { quotes: none; }
+    q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+    a img { border: none; }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+
+    * html { font-size: 100%; }
+
+    html { font-size: 16px; line-height: 1.625em; }
+
+    * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+    h1 {font-size: 2.25em; margin: 0.25em;}
+
+    h2 {font-size: 1.5em;  margin: 0.25em;}
+
+    ul.nav {padding: 1.55em 0;}
+
+    ul.nav li { display: inline-block; padding: 0 0.5em;}
+
+
+    /*------------------------------*\
+        Framework
+    \*------------------------------*/
+
+    .row, .column {
+    box-sizing: border-box;
+    }
+
+    .row:before, .row:after {
+    content: " ";
+    display: table;
+    }
+    .row:after {
+    clear: both;
+    }
+
+    .column {
+    position: relative;
+    float: left;
+    display:block;
+    }
+
+    .column + .column {
+    margin-left: 1.6%;
+    }
+
+
+    .column-1 {
+        width: 6.86666666667%;
+    }
+
+    .column-2 {
+        width: 15.3333333333%;
+    }
+
+    .column-3 {
+        width: 23.8%;
+    }
+
+    .column-4 {
+        width: 32.2666666667%;
+    }
+
+    .column-5 {
+        width: 40.7333333333%;
+    }
+
+    .column-6 {
+        width: 49.2%;
+    }
+
+    .column-7 {
+        width: 57.6666666667%;
+    }
+
+    .column-8 {
+        width: 66.1333333333%;
+    }
+
+    .column-9 {
+        width: 74.6%;
+    }
+
+    .column-10 {
+        width: 83.0666666667%;
+    }
+
+    .column-11 {
+        width: 91.5333333333%;
+    }
+
+    .column-12 {
+        width: 100%;
+    }
+
+
+
+
+    @media only screen and (max-width: 550px) {
+        .column-1,
+        .column-2,
+        .column-3,
+        .column-4,
+        .column-5,
+        .column-6,
+        .column-7,
+        .column-8,
+        .column-9,
+        .column-10,
+        .column-11,
+        .column-12 {
+            width: auto;
+            float: none;
+        }
+
+        .column + .column {
+            margin-left: 0;
+        }
+    }
+
+
+
+
+    /*------------------------------*\
+        Styling
+    \*------------------------------*/
+
+
+    body {
+        padding: 20px;
+    }
+
+    .column {
+        background: #eee;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #777;
+        padding: 5px;
+        min-height: 30px;
+        text-align: center;
+    }
+
+    .row {
+        margin-bottom: 10px;
+    }
+
+    .row:last-child {
+        margin-bottom: 1em;
+    }
+
+    .column .column {
+        color: #eee;
+        background: #333;
+        border-color: #000;
+    }
+
+    p.text-center {
+      font-size: 14px;
+      text-align: center;
+    }
+
+
+    @media only screen and (max-width: 550px) {
+        .row {
+            margin-bottom: 0;
+        }
+        .column {
+            margin-bottom: 10px;
+        }
+        .row:last-child .column:last-child {
+            margin-bottom: 0;
+        }
+    }
+    </style>
+
+</head>
+<body>
+
+    <header role="banner">
+        <div class="row">
+            <div class="column column-6">
+                <h1>Basic Responsive Template</h1>
+                <h2>with Metadata &amp; <abbr title="Accessible Rich Internet Applications">ARIA</abbr></h2>
+            </div><!-- /column column-6 -->
+            <div class="column column-6">
+                <nav class="hide-on-print" role="navigation">
+                    <ul class="nav">
+                          <li class="home"><a href="#" title="Home">Home</a></li>
+                          <li class="terms"><a href="#terms" title="Term of Use">Terms of Use</a></li>
+                          <li class="about"><a href="http://www.trudymessingham.co.uk/index.php" title="About Me" onmouseover="this.title='';">About Me</a></li>
+                          <li class="contact"><a class="current" href="http://www.trudymessingham.co.uk/contact-me.php" title="Contact Me" onmouseover="this.title='';">Contact Me</a></li>
+                    </ul>
+                </nav>
+
+            </div><!-- /column column-6 -->
+        </div>
+
+    </header>
+
+
+    <main role="main">
+
+        <div class="row">
+            <div class="column column-8">
+
+                <section aria-labelledby="section-heading">
+
+                    <h2 id="section-heading">Grid System</h2>
+
+
+                    <article role="article">
+
+                        <div class="row">
+                            <div class="column column-4"></div>
+                            <div class="column column-4"></div>
+                            <div class="column column-4"></div>
+                        </div>
+                        <div class="row">
+                            <div class="column column-2"></div>
+                            <div class="column column-4"></div>
+                            <div class="column column-4"></div>
+                            <div class="column column-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="column column-5"></div>
+                            <div class="column column-7"></div>
+                        </div>
+
+                    </article>
+
+                </section>
+
+            </div><!-- /column column-8 -->
+
+            <div class="column column-4">
+
+                <aside role="complementary">
+
+                    <h2>This is the aside area</h2>
+
+                    <div class="row">
+                        <div class="column column-4"></div>
+                        <div class="column column-4"></div>
+                        <div class="column column-4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="column column-2"></div>
+                        <div class="column column-4"></div>
+                        <div class="column column-4"></div>
+                        <div class="column column-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="column column-5"></div>
+                        <div class="column column-7"></div>
+                    </div>
+
+                </aside>
+
+            </div><!-- /column column-4 -->
+        </div><!-- /row -->
+
+        <div class="row">
+            <div class="column column-12"></div>
+        </div>
+        <div class="row">
+            <div class="column column-8"></div>
+            <div class="column column-4"></div>
+        </div>
+        <div class="row">
+            <div class="column column-1"></div>
+            <div class="column column-3"></div>
+            <div class="column column-4"></div>
+            <div class="column column-3"></div>
+            <div class="column column-1"></div>
+        </div>
+        <div class="row">
+            <div class="column column-3"></div>
+            <div class="column column-3"></div>
+            <div class="column column-3"></div>
+            <div class="column column-3"></div>
+        </div>
+        <div class="row">
+            <div class="column column-12"></div>
+        </div>
+
+        <div class="row">
+            <div class="column column-6">
+                <div class="row">
+                    <div class="column column-6"></div>
+                    <div class="column column-6"></div>
+                </div>
+                <div class="row">
+                    <div class="column column-3"></div>
+                    <div class="column column-3"></div>
+                    <div class="column column-3"></div>
+                    <div class="column column-3"></div>
+                </div>
+                <div class="row">
+                    <div class="column column-4"></div>
+                    <div class="column column-4"></div>
+                    <div class="column column-4"></div>
+                </div>
+            </div>
+            <div class="column column-6">
+                <div class="row">
+                    <div class="column column-7"></div>
+                    <div class="column column-3"></div>
+                    <div class="column column-2"></div>
+                </div>
+                <div class="row">
+                    <div class="column column-2"></div>
+                    <div class="column column-2"></div>
+                    <div class="column column-4"></div>
+                    <div class="column column-2"></div>
+                    <div class="column column-2"></div>
+                </div>
+                <div class="row">
+                    <div class="column column-9"></div>
+                    <div class="column column-3"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer role="contentinfo">
+
+        <div class="row">
+            <div class="column column-12">
+
+                <div class="row">
+                    <div class="column column-4">Footer Left</div>
+                    <div class="column column-4">Footer Middle</div>
+                    <div class="column column-4">Footer Right</div>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>
